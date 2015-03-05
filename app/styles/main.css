@@ -63,23 +63,23 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
-  }
+}
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+/* Remove the padding we set earlier */
+.header,
+.marketing,
+.footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Space out the masthead */
+.header {
+  margin-bottom: 30px;
+}
+/* Remove the bottom border on the jumbotron for visual effect */
+.jumbotron {
+  border-bottom: 0;
+}
 }
 
 a {
@@ -105,6 +105,9 @@ paper-tab > a, .navbar-header > a.navbar-brand{
 }
 
 .jumbotron{
+  -webkit-box-shadow: 6px 7px 28px -9px rgba(0,0,0,0.7);
+  -moz-box-shadow: 6px 7px 28px -9px rgba(0,0,0,0.7);
+  box-shadow: 6px 7px 28px -9px rgba(0,0,0,0.7);
   background-color: #BBDEFB;
 }
 
@@ -116,83 +119,27 @@ paper-tab > a, .navbar-header > a.navbar-brand{
   text-transform: capitalize;
 }
 
-/* card flip */
-/* entire container, keeps perspective */
-.flip-container {
-  perspective: 2000;
-}
-/* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
-  transform: rotateY(180deg);
-}
-
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-
-  .flip-container, .front, .back {
-    height: 300px;
-}
-  }
-
-  /* Extra Small Devices, Phones */ 
-  @media only screen and (min-width : 480px) {
-    .flip-container, .front, .back {
-      height: 580px;
+.toggleContainer{
+  -webkit-box-shadow: 6px 7px 28px -9px rgba(0,0,0,0.7);
+  -moz-box-shadow: 6px 7px 28px -9px rgba(0,0,0,0.7);
+  box-shadow: 6px 7px 28px -9px rgba(0,0,0,0.7);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #BBDEFB;
+  margin-bottom: 10px;
 }
 
-  }
-
-  /* Small Devices, Tablets */
-  @media only screen and (min-width : 768px) {
-    .flip-container, .front, .back {
-      height: 580px;
+.toggleContainer h3{
+  margin: 5px 5px 10px 5px;
+  text-align: center;
 }
 
-  }
-
-  /* Medium Devices, Desktops */
-  @media only screen and (min-width : 992px) {
-
-    .flip-container, .front, .back {
-      height: 300px;
-}
-  }
-
-  /* Large Devices, Wide Screens */
-  @media only screen and (min-width : 1200px) {
-
-    .flip-container, .front, .back {
-      height: 300px;
-}
-  }
-
-
-  /* flip speed goes here */
-  .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-
-    position: relative;
+.toggleContainer paper-checkbox{
+  margin: 0 auto;
 }
 
-/* hide back of pane during swap */
-.front, .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
-  background-color: #90CAF9;
-}
-
-/* back, initially hidden pane */
-.back {
-  transform: rotateY(180deg);
-  background-color: white;
+.skill{
+  display: block;
+  font-size: .8em;
+  text-transform: capitalize;
 }

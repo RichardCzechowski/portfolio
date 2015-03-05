@@ -6,20 +6,43 @@
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
-<div ng-repeat="toggle in toggles track by $index">
-<paper-toggle-button ng-model="toggle.value"></paper-toggle-button>
-<span class="toggleName">{{toggle.name}}</span>
+<div class="row">
+  <div class="toggleContainer col-xs-12 col-sm-5">
+    <h3>Toggles</h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4" ng-repeat="toggle in toggles track by $index">
+        <paper-toggle-button ng-model="toggle.value"></paper-toggle-button>
+        <span class="toggleName">{{toggle.name}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="toggleContainer col-xs-12 col-sm-5 col-sm-offset-2">
+    <h3>Search</h3>
+    <div>
+      <paper-input ng-model="search" label="Search" floatingLabel></paper-input>
+    </div>
+  </div>
 </div>
 <div class="row portfolio">
-  <div class="flip-container col-sm-12 col-md-6 col-lg-6 col-xl-4" ng-repeat="project in data.projects | toggleFilter:toggles | orderBy: sortDate: true" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper">
-      <div class="front">
-        <img class="img-thumbnail" ng-src="{{project.photoUrl}}">
-        {{project.dateStart | date: shortdate}}
-      </div>
-      <div class="back">
-        {{project.description}}
+  <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4" ng-repeat="project in data.projects | toggleFilter:toggles | orderBy: sortDate: true | filter: search" ontouchstart="this.classList.toggle('hover');">
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">
+          <img class="img-thumbnail" ng-src="{{project.photoUrl}}">
+          {{project.dateStart | date: shortdate}}
+        </div>
+        <div class="back">
+          {{project.description}}
+        </div>
       </div>
     </div>
   </div>
 </div>
+  <div class="toggleContainer col-xs-12">
+    <h3>Skills</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-3" ng-repeat="(key, value) in techs | orderBy:value.count">
+        <paper-badge count="{{value.count}}" label="{{key}}"></paper-badge>
+      </div>
+    </div>
+  </div>
