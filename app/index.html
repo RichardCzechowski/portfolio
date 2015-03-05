@@ -5,6 +5,13 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+    <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -18,13 +25,13 @@
   </head>
   <body ng-app="portfolioApp">
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+        <div class="container" ng-controller="HeaderCtrl">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -34,23 +41,28 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">portfolio</a>
+            <a class="navbar-brand" href="#/" ng-click="isActive = 0">portfolio</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav" ng-controller="HeaderCtrl">
-              <li ng-class="{active: isActive('/')}"><a href="#/">Home</a></li>
-              <li ng-class="{active: isActive('/about')}"><a ng-href="#/about">About</a></li>
-              <li ng-class="{active: isActive('/contact')}"><a ng-href="#/contact">Contact</a></li>
-            </ul>
+            <paper-tabs ng-model="isActive" link>
+            <paper-tab>
+            <a href="#/" horizontal center-center layout>Home</a>
+            </paper-tab>
+            <paper-tab>
+            <a href="#/about" horizontal center-center layout>About</a>
+            </paper-tab>
+            <paper-tab>
+            <a href="#/contact" horizontal center-center layout>Contact</a>
+            </paper-tab>
+            </paper-tabs>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div class="view" ng-view=""></div>
     </div>
 
     <div class="footer">
@@ -58,18 +70,6 @@
         <a href="mailto:rczec002@gmail.com"><p><span class="glyphicon glyphicon-envelope"></span> Richard Czechowski</p></a>
       </div>
     </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -82,15 +82,21 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ng-polymer-elements/ng-polymer-elements.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <script src="scripts/controllers/header.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/controllers/header.js"></script>
+    <!-- Filters -->
+    <script src="scripts/filters/toggle.js"></script>
+    <!-- Factories and Services -->
+    <script src="scripts/services/settings.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>

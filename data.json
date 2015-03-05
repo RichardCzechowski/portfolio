@@ -1,0 +1,95 @@
+portfolio.push({
+  title: "Daily Steak",
+  company: "Onmego",
+  description: "Daily Steak is a news app for iOS and Android. It customized audio news snippes similar to pandora. I designed the “full-story-view” using AngularJS and a custom API in addition to which I tracked and fixed numerous bugs.",
+  technology: ["javascript", "coffeescript", "angular", "api", "html", "css"],
+  type: "app",
+  photoUrl: "http://richard.dickandcharlie.com/img/portfolio/onmego.png",
+  website: "http://onmego.com/old.html",
+  dateStart: "03/01/2014",
+  dateEnd: "10/01/2014"
+});
+
+portfolio.push({
+  title: "What do we do Meow",
+  company: "Global Game Jam @ Facebook",
+  technology: [ "C#", "javascript", "unity3D"],
+  type: "game",
+  description: "A game about a super space cat. I provided all programming and technical skills on this project while a team of three talented designers, artists and animators provided graphics.",
+  photoUrl: "http://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/225/328/datas/xlarge.png",
+  website: "http://challengepost.com/software/what-do-we-do-meow-ggj-2015",
+  dateStart: "01/23/15",
+  dateEnd: "01/25/15"
+});
+
+portfolio.push({
+  title: "Findr",
+  company: "AT&T hackathon 2014",
+  technology: ["javascript", "html", "css", "api"],
+  type: "app",
+  description: "An app that linked google maps to Toyota's internal vehicular api. Allowed a user with the app to easily locate their car or a person in the car to locate a user with the app.",
+  photoUrl: "http://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/182/891/datas/xlarge.png",
+  website: "http://challengepost.com/software/fyndr",
+  dateStart: "10/15/2014",
+  dateEnd: "10/16/2014"
+});
+
+portfolio.push({
+  title: "Butter Whale",
+  company: "Beta Breakers Game Jam @ Vungle",
+  technology: ["C#", "javascript", "unity3D"],
+  type: "game",
+  description: "A game about a sad, lost whale made of butter trying to reunite with his friend Toastman. I provided all programming and technical skills while a team of two designers and one 'sound engineer' provided content.",
+  photoUrl: "http://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/185/151/datas/xlarge.png",
+  website: "http://challengepost.com/software/butter-whale",
+  dateStart: "12/15/2014",
+  dateEnd: "12/16/2014"
+});
+
+portfolio.push({
+  title: "Tasker",
+  company: "Agile Labs",
+  technology: ["javascript", "angular", "api", "html", "css", "node", "express", "postgreSQL" ],
+  type: "app",
+  description: "Lead programmer on chrome extension for task management from within gmail's interface. Wrote extension as angular app. Also wrote a REST api in Node that used and ORM to make queries to PostgreSQL on behalf of the user.",
+  photoUrl: "https://lh6.googleusercontent.com/XNfDbpmkXUIyQaqoHxFhqje79lM9EndNWHSGWIqItFRYtisocD8DpxfccU8eWc2LaVxeRK0vEg=s1280-h800-e365-rw",
+  website: "http://coding-house.github.io/tasker-website/AppMojo/",
+  dateStart: "10/15/2014",
+  dateEnd: "03/30/2015"
+});
+
+portfolio.push({
+  title: "Studies at Coding House",
+  company: "Coding House",
+  technology: ["html", "css", "javascript", "angular", "node", "mongoDB", "express", "jquery", "git", "vim", "appgyver", "handlebars", "firebase", "rails", "parse", "meteor"],
+  type: "education",
+  description: "A full immersion bootcamp that kills the curriculum model of college.",
+  photoUrl: "https://pbs.twimg.com/profile_images/477157394850385920/ZGyWlzlu.png",
+  website: "http://codinghouse.co",
+  dateStart: "10/23/14",
+  dateEnd: "12/23/14"
+});
+
+portfolio.push({
+  title: "Degree in Philosophy",
+  company: "UC Riverside",
+  technology: ["books"],
+  type: "education",
+  description: "I was an outstanding student at UC Riverside, where I gained accolades for my writing and maintained just shy of a 4.0 for my upper-division classes. I started coding because of logic class. Don't knock it :)",
+  photoUrl: "http://www.highlandernews.org/wp-content/uploads/2013/04/ucr-logo-new.jpg",
+  website: "http://www.ucr.edu/",
+  dateStart: "08/01/07",
+  dateEnd: "06/06/12"
+});
+
+portfolio.push({
+  title: "Ongoing education",
+  company: "City University of Seattle",
+  technology: ["web"],
+  type: "education",
+  description: "I take online classes just to continue learning non-web and to be legit and get a degree in CS. I'm not thrilled with academia's approach to coding, hence the bootcamp, but it's still worthwhile.",
+  photoUrl: "http://ww1.prweb.com/prfiles/2013/01/24/10360879/CityUBldg011013Small.jpg",
+  website: "http://www.cityu.edu/",
+  dateStart: "08/01/13",
+  dateEnd: "06/06/16"
+});
