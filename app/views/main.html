@@ -1,10 +1,9 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1>Richard Czechowski</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    <img src="images/profile.png" alt="I'm Yeoman"><br>
+    Javascript Engineer and Polymath.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 <div class="row">
   <div class="toggleContainer col-xs-12 col-sm-5">
@@ -19,30 +18,26 @@
   <div class="toggleContainer col-xs-12 col-sm-5 col-sm-offset-2">
     <h3>Search</h3>
     <div>
-      <paper-input ng-model="search" label="Search" floatingLabel></paper-input>
+      <paper-input ng-model="search" label="Search"></paper-input>
     </div>
   </div>
 </div>
-<div class="row portfolio">
-  <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4" ng-repeat="project in data.projects | toggleFilter:toggles | orderBy: sortDate: true | filter: search" ontouchstart="this.classList.toggle('hover');">
-    <div class="flip-container">
-      <div class="flipper">
-        <div class="front">
-          <img class="img-thumbnail" ng-src="{{project.photoUrl}}">
-          {{project.dateStart | date: shortdate}}
-        </div>
-        <div class="back">
-          {{project.description}}
-        </div>
+<div class="row">
+  <div class="portfolio col-xs-12 col-md-6 col-lg-6 col-xl-4" ng-repeat="project in data.projects | toggleFilter:toggles | orderBy: sortDate: true | filter: search" ontouchstart="this.classList.toggle('hover');">
+      <div class="front" >
+        <img class="img-responsive" ng-src="{{project.photoUrl}}">
       </div>
+      <div class="back" ng-class="{portfolioShow: project.show}" ng-mouseenter="project.show = true" ng-mouseleave="project.show = false">
+        {{project.dateStart | date: shortdate}}
+        {{project.description}}
+      </div>
+    </div>
+</div>
+<div class="toggleContainer col-xs-12">
+  <h3>Skills</h3>
+  <div class="row">
+    <div class="col-xs-6 col-sm-3" ng-repeat="(key, value) in techs | orderBy:value.count">
+      <paper-badge count="{{value.count}}" label="{{key}}"></paper-badge>
     </div>
   </div>
 </div>
-  <div class="toggleContainer col-xs-12">
-    <h3>Skills</h3>
-    <div class="row">
-      <div class="col-xs-6 col-sm-3" ng-repeat="(key, value) in techs | orderBy:value.count">
-        <paper-badge count="{{value.count}}" label="{{key}}"></paper-badge>
-      </div>
-    </div>
-  </div>
