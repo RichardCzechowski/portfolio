@@ -9,7 +9,6 @@ angular.module('portfolioApp')
 
   $scope.getData = function (){
     portfolio.on("value", function(snapshot) {
-      $scope.$apply(function(){
         snapshot = snapshot.val();
         for (var key in snapshot){
           $scope.data.temp.push(snapshot[key]);
@@ -21,7 +20,6 @@ angular.module('portfolioApp')
           console.log($scope.data.projects);
         })
       });
-    });
   };
 
   $scope.getData();
