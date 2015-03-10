@@ -30,6 +30,14 @@ body {
   padding-bottom: 19px;
 }
 
+#mainNav{
+  width: 50%;
+}
+
+md-input-container{
+
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -91,16 +99,8 @@ a {
   background-color: #2196F3;
 }
 
-/* polymer */
-paper-tabs::shadow #selectionBar {
-  background-color: #ff4081;
-}
 
-paper-tabs paper-tab::shadow #ink {
-  color: #ff4081;
-}
-
-paper-tab > a, .navbar-header > a.navbar-brand{
+md-tab > a, .navbar-header > a.navbar-brand{
   color: #FFF;
 }
 
@@ -168,7 +168,7 @@ paper-tab > a, .navbar-header > a.navbar-brand{
   text-align: center;
 }
 
-.toggleContainer paper-checkbox{
+.toggleContainer md-checkbox{
   margin: 0 auto;
 }
 

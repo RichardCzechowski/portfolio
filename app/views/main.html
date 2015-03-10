@@ -1,3 +1,12 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+      </md-content>
+    </md-sidenav>
 <div class="jumbotron">
   <h1>Richard Czechowski</h1>
   <p class="lead">
@@ -6,19 +15,13 @@
   </p>
 </div>
 <div class="row portfolioRow">
-  <div class="toggleContainer col-xs-12 col-sm-5">
+  <div class="toggleContainer col-xs-12">
     <h3>Toggles</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-4" ng-repeat="toggle in toggles track by $index">
-        <paper-toggle-button ng-model="toggle.value"></paper-toggle-button>
+        <md-switch ng-model="toggle.value"></md-switch>
         <span class="toggleName">{{toggle.name}}</span>
       </div>
-    </div>
-  </div>
-  <div class="toggleContainer col-xs-12 col-sm-5 col-sm-offset-2">
-    <h3>Search</h3>
-    <div>
-      <paper-input ng-model="search" label="Search"></paper-input>
     </div>
   </div>
 </div>
@@ -37,7 +40,7 @@
   <h3>Skills</h3>
   <div class="row">
     <div class="col-xs-6 col-sm-3" ng-repeat="(key, value) in techs | orderBy:value.count">
-      <paper-badge count="{{value.count}}" label="{{key}}"></paper-badge>
+      <span class="badge">{{value.count}}</span> {{key}}
     </div>
   </div>
 </div>
